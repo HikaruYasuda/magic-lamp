@@ -1,0 +1,12 @@
+{
+  "name": "magic-lamp",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=6.4.0"
+  },
+  "bin": {
+    "lamp": "./index"
+  },
+  "dependencies": {}
+}
