@@ -1,12 +1,19 @@
 {
   "name": "magic-lamp",
-  "version": "1.0.0",
-  "main": "lib/index.js",
+  "version": "1.0.5",
+  "main": "lib",
   "engines": {
     "node": ">=6.4.0"
   },
   "bin": {
-    "lamp": "./index"
+    "lamp": "./index.js"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "author": "Hikaru Yasuda<yasuda.hikaru@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "readme.md",
+    "index.js"
+  ]
 }
