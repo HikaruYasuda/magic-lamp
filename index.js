@@ -44,7 +44,8 @@ function usage() {
 
 /** @param {Array} args */
 function exec_command(args) {
-  const [cmd, service = defaultExecService] = ((arg = '') => arg.split(':'))(args.shift())
+  const arg = args.shift() || ''
+  const [cmd, service = defaultExecService] = arg.split(':')
   const container = containerName(service)
   switch (cmd) {
     case 'start': return dockerCompose(projectName, ['up', '-d', ...args])
@@ -60,6 +61,6 @@ function exec_command(args) {
     default:
       if (/^(-v|(--)?version)$/.test(cmd)) return console.log(require(__dirname+'/package.json').version)
       if (/^(-h|(--)?help)$/.test(cmd)) return usage()
-      return dockerCompose(projectName, args)
+      return dockerCompose(projectName, [arg, ...args])
   }
 }
