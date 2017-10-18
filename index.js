@@ -30,6 +30,7 @@ function usage() {
     '  help      Show this help',
     '  login     Login to a running container',
     '  php       Run a php command in a running container',
+    '  restart   Restart containers',
     '  start     Start containers',
     '  stop      Stop running containers',
     '  test      Run the php unit test in a running container',
@@ -50,6 +51,7 @@ function exec_command(args) {
   switch (cmd) {
     case 'start': return dockerCompose(projectName, ['up', '-d', ...args])
     case 'stop': return dockerCompose(projectName, ['stop', ...args])
+    case 'restart': return dockerCompose(projectName, ['restart', ...args])
     case 'exec': return dockerExec(container, args)
     case 'login': return dockerExec(container, ['bash', ...args])
     case 'composer': return dockerExec(container, ['composer', ...args])
