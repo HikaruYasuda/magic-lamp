@@ -9,6 +9,10 @@
     "lamp": "./index.js"
   },
   "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HikaruYasuda/magic-lamp.git"
+  },
   "author": "Hikaru Yasuda<yasuda.hikaru@gmail.com>",
   "license": "MIT",
   "files": [
