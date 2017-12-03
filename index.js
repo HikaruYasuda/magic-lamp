@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
+const fs = require('fs')
+const path = require('path')
+
 const {
   dockerCompose,
   dockerExec,
   createTemplate,
 } = require('./lib')
-
-const fs = require('fs')
-const path = require('path')
+const version = require('./package.json').version
 
 const loadJSONFile = path => fs.existsSync(path) && JSON.parse(fs.readFileSync(path)||'false')
 const config = loadJSONFile('package.json') || {}
@@ -61,7 +62,7 @@ function exec_command(args) {
     case 'create': return createTemplate(args)
     case '': return usage()
     default:
-      if (/^(-v|(--)?version)$/.test(cmd)) return console.log(require(__dirname+'/package.json').version)
+      if (/^(-v|(--)?version)$/.test(cmd)) return console.log(version)
       if (/^(-h|(--)?help)$/.test(cmd)) return usage()
       return dockerCompose(projectName, [arg, ...args])
   }
