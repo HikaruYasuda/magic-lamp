@@ -1,6 +1,6 @@
 {
   "name": "magic-lamp",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "lib",
   "engines": {
     "node": ">=6.4.0"
